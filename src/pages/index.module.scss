@@ -109,4 +109,10 @@
       flex-wrap: wrap;
     }
   }
+  .tasks {
+    .task {
+      max-width: 300px;
+      width: 100%;
+    }
+  }
 }

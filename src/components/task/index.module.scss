@@ -38,13 +38,18 @@
   .container {
     padding: 12px 0px;
     justify-content: center;
+    max-width: 440px;
     .text {
       max-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
 @media screen and (max-width: 400px) {
   .container {
-    flex-direction: column;
+    max-width: 240px;
+    padding: 12px;
   }
 }
