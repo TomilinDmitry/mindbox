@@ -30,6 +30,8 @@ form {
 }
 @media screen and (max-width: 600px) {
   form {
+    display: flex;
+    justify-content: center;
     .input {
       max-width: 350px;
     }
@@ -40,8 +42,6 @@ form {
 }
 @media screen and (max-width: 400px) {
   form {
-    display: flex;
-    justify-content: center;
     .input {
       max-width: 200px;
     }

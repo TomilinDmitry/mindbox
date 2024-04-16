@@ -41,9 +41,6 @@
     max-width: 440px;
     .text {
       max-width: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
   }
 }
@@ -51,5 +48,9 @@
   .container {
     max-width: 240px;
     padding: 12px;
+    .text {
+      max-width: 140px;
+      font-size: 12px;
+    }
   }
 }
