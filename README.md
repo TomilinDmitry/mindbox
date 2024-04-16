@@ -1,46 +1,18 @@
-# Getting Started with Create React App
+# <a href=https://tomilindmitry.github.io/mindbox/ style="color: white;">MindBox</a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Добро пожаловать в TodoList for MindBox! 
+**Этот проект разработан с использованием следующего стека технологий:**
 
-## Available Scripts
+## TypeScript   <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TS" alt="TS" width="20" height="20"/>&nbsp;
 
-In the project directory, you can run:
+TypeScript - это язык программирования с открытым исходным кодом, который представляет собой строгий надмножество JavaScript, добавляющий статическую типизацию к языку. Он улучшает разработку и поддержку кода, делая его более надежным и понятным.
 
-### `npm start`
+## React <img src="https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/react/react-original-wordmark.svg" title="React" width="20" height="20"/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+React - это библиотека JavaScript для создания пользовательских интерфейсов. Она позволяет разрабатывать компоненты UI, которые могут быть повторно использованы в различных частях приложения, что делает код более модульным и поддерживаемым.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Redux   <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux " width="20" height="20"/>&nbsp;
 
-### `npm test`
+Redux - это инструмент управления состоянием для JavaScript-приложений, основанный на шаблоне проектирования Flux. Он помогает организовать состояние приложения и управлять его изменениями, обеспечивая однонаправленный поток данных.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
