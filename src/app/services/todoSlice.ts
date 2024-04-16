@@ -13,7 +13,8 @@ export const initialState: TTodoInitialState = {
   check: loadDataFromLocalStorage("check") || {},
   value: "",
   todoList: loadDataFromLocalStorage("todoList") || [],
-  checkedItems: [],
+  checkedItems: loadDataFromLocalStorage("cheked") || [],
+  uncheckedItems: loadDataFromLocalStorage("uncheked") || [],
   activeTab: "All",
 };
 export const todoSlice = createSlice({
@@ -24,13 +25,15 @@ export const todoSlice = createSlice({
       const id = action.payload;
       const value = !state.check[id];
       state.check[id] = value;
-      if (value) {
-        state.checkedItems.push(id);
-      } else {
-        state.checkedItems = state.checkedItems.filter(
-          (el) => el !== id,
-        );
-      }
+      state.checkedItems = state.todoList.filter(
+        (item) => state.check[item.id!],
+      );
+      state.uncheckedItems = state.todoList.filter(
+        (item) => !state.check[item.id!],
+      );
+      saveDataToLocalStorage("checked", state.checkedItems);
+      saveDataToLocalStorage("unchecked", state.uncheckedItems);
+      saveDataToLocalStorage("check", state.check);
     },
     setValue: (state, action: PayloadAction<string>) => {
       state.value = action.payload;
@@ -43,11 +46,29 @@ export const todoSlice = createSlice({
       state.todoList.push({ id, task });
       saveDataToLocalStorage("todoList", state.todoList);
     },
-    deleteItem: (state, action: PayloadAction<number>) => {
-      state.todoList = state.todoList.filter(
-        (el) => el.id !== action.payload,
+    setUncheckedItem: (state, action: PayloadAction<number>) => {
+      const id = action.payload;
+      state.checkedItems = state.checkedItems.filter(
+        (checkedId) => checkedId !== id,
       );
+    },
+    deleteItem: (state, action: PayloadAction<number>) => {
+      const idToDelete = action.payload;
+
+      state.todoList = state.todoList.filter(
+        (el) => el.id !== idToDelete,
+      );
+      state.checkedItems = state.checkedItems.filter(
+        (id) => id !== idToDelete,
+      );
+      state.uncheckedItems = state.uncheckedItems.filter(
+        (id) => id !== idToDelete,
+      );
+
+      delete state.check[idToDelete];
+
       saveDataToLocalStorage("todoList", state.todoList);
+      saveDataToLocalStorage("check", state.check);
     },
     setActiveTab: (state, action: PayloadAction<string>) => {
       state.activeTab = action.payload;
@@ -55,7 +76,12 @@ export const todoSlice = createSlice({
   },
 });
 
-export const { setCheck, setValue, setTodoList, deleteItem,setActiveTab } =
-  todoSlice.actions;
+export const {
+  setCheck,
+  setValue,
+  setTodoList,
+  deleteItem,
+  setActiveTab,
+} = todoSlice.actions;
 
 export default todoSlice.reducer;

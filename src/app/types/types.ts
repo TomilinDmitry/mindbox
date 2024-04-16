@@ -2,8 +2,9 @@ export type TTodoInitialState = {
   check: Record<number, boolean>;
   value: string;
   todoList: TTaskState[];
-  checkedItems: number[];
+  checkedItems: TTaskState[];
   activeTab: string;
+  uncheckedItems:TTaskState[];
 };
 
 export type TTask = {
@@ -11,6 +12,6 @@ export type TTask = {
   id: number;
 };
 export type TTaskState = {
-  task: string;
-  id: number;
+  task?: string;
+  id?: number;
 };

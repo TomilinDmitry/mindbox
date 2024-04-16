@@ -9,12 +9,11 @@
   border-radius: 8px;
   min-height: 50px;
   justify-content: space-between;
-  box-shadow: 2px 2px 12px 0px #242F7B26;
+  box-shadow: 2px 2px 12px 0px #242f7b26;
   margin-bottom: 5px;
   .text {
     font-size: 24px;
-    font-weight: 500;
-    font-family: "Halvetica";
+    font-weight: 400;
   }
   .check {
     @extend .text;
