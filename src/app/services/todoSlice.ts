@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { TTask, TTodoInitialState } from "../types/types";
-import { v4 as uuidv4 } from "uuid";
+import { TTodoInitialState } from "../types/types";
+
 const saveDataToLocalStorage = <T>(key: string, data: T) => {
   localStorage.setItem(key, JSON.stringify(data));
 };
@@ -46,29 +46,25 @@ export const todoSlice = createSlice({
       state.todoList.push({ id, task });
       saveDataToLocalStorage("todoList", state.todoList);
     },
-    setUncheckedItem: (state, action: PayloadAction<number>) => {
-      const id = action.payload;
-      state.checkedItems = state.checkedItems.filter(
-        (checkedId) => checkedId !== id,
-      );
-    },
     deleteItem: (state, action: PayloadAction<number>) => {
       const idToDelete = action.payload;
 
       state.todoList = state.todoList.filter(
         (el) => el.id !== idToDelete,
       );
-      state.checkedItems = state.checkedItems.filter(
-        (id) => id !== idToDelete,
+      state.checkedItems = state.todoList.filter(
+        (item) => state.check[item.id!],
       );
-      state.uncheckedItems = state.uncheckedItems.filter(
-        (id) => id !== idToDelete,
+      state.uncheckedItems = state.todoList.filter(
+        (item) => !state.check[item.id!],
       );
 
       delete state.check[idToDelete];
 
       saveDataToLocalStorage("todoList", state.todoList);
       saveDataToLocalStorage("check", state.check);
+      saveDataToLocalStorage("checked", state.checkedItems);
+      saveDataToLocalStorage("unchecked", state.uncheckedItems);
     },
     setActiveTab: (state, action: PayloadAction<string>) => {
       state.activeTab = action.payload;

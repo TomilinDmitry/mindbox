@@ -25,6 +25,13 @@ export const MainPage = () => {
           </div>
         ) : activeTab === "Active" ? (
           <div className={style.tasks}>
+            {uncheckedItems.length === 0 && (
+              <div className={style.noItemsContainer}>
+                <span className={style.noItems}>
+                  Активных задач нет.
+                </span>
+              </div>
+            )}
             {uncheckedItems.map((el, index) => (
               <div className={style.task} key={index}>
                 <Task task={el.task} id={el.id} />
@@ -33,6 +40,13 @@ export const MainPage = () => {
           </div>
         ) : activeTab === "Complited" ? (
           <div className={style.tasks}>
+            {checkedItems.length === 0 && (
+              <div className={style.noItemsContainer}>
+                <span className={style.noItems}>
+                  Выполненных задач нет.
+                </span>
+              </div>
+            )}
             {checkedItems.map((el, index) => (
               <div className={style.task} key={index}>
                 <Task id={el.id} task={el.task} />
