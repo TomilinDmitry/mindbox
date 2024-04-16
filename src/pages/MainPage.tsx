@@ -17,13 +17,7 @@ export const MainPage = () => {
         <div className={style.inputBlock}>
           <Input />
         </div>
-        {todoList.length === 0 ? (
-          <div className={style.noItemsContainer}>
-            <span className={style.noItems}>
-              Задач на сегодня нет.
-            </span>
-          </div>
-        ) : activeTab === "Active" ? (
+        {activeTab === "Active" ? (
           <div className={style.tasks}>
             {uncheckedItems.length === 0 && (
               <div className={style.noItemsContainer}>
@@ -55,6 +49,13 @@ export const MainPage = () => {
           </div>
         ) : (
           <div className={style.tasks}>
+            {todoList.length === 0 && (
+              <div className={style.noItemsContainer}>
+                <span className={style.noItems}>
+                  Задача на сегодня нет.
+                </span>
+              </div>
+            )}
             {todoList.map((el, index) => (
               <div className={style.task} key={index}>
                 <Task task={el.task} id={el.id} />
