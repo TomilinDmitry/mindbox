@@ -21,6 +21,25 @@
       font-weight: 200;
       font-size: 48px;
     }
+    .noItemsContainer {
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      .noItems {
+        display: flex;
+        max-width: 600px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+        border-radius: 8px;
+        min-height: 50px;
+        margin-bottom: 5px;
+        font-size: 32px;
+        color: #b5b5b7;
+        font-weight: 200;
+      }
+    }
     .inputBlock {
       display: flex;
       justify-content: center;

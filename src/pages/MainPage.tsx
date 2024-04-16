@@ -17,7 +17,13 @@ export const MainPage = () => {
         <div className={style.inputBlock}>
           <Input />
         </div>
-        {activeTab === "Active" ? (
+        {todoList.length === 0 ? (
+          <div className={style.noItemsContainer}>
+            <span className={style.noItems}>
+              Задач на сегодня нет.
+            </span>
+          </div>
+        ) : activeTab === "Active" ? (
           <div className={style.tasks}>
             {uncheckedItems.map((el, index) => (
               <div className={style.task} key={index}>
@@ -42,6 +48,7 @@ export const MainPage = () => {
             ))}
           </div>
         )}
+
         <div className={style.navigate}></div>
         <div className={style.listLength}>
           {activeTab === "All" && (
