@@ -28,3 +28,25 @@ form {
     cursor: pointer;
   }
 }
+@media screen and (max-width: 600px) {
+  form {
+    .input {
+      max-width: 350px;
+    }
+    .button {
+      right: 10px;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  form {
+    display: flex;
+    justify-content: center;
+    .input {
+      max-width: 200px;
+    }
+    .button {
+      right: 10px;
+    }
+  }
+}

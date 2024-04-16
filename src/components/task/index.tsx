@@ -13,9 +13,9 @@ export const Task = ({ task, id }: TTaskState) => {
     <div
       className={`${check[id!] ? style.checkTask : style.container}`}>
       <CheckBox id={id!} />
-      <span className={`${check[id!] ? style.check : style.text}`}>
+      <p className={`${check[id!] ? style.check : style.text}`}>
         {task}
-      </span>
+      </p>
       <img
         src={deleteIcon}
         alt='delete'
