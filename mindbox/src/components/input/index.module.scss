@@ -1,0 +1,30 @@
+form {
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  .input {
+    max-width: 600px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #acccff;
+
+    &:focus {
+      border: 1px solid #242f7b;
+    }
+  }
+  .button {
+    position: absolute;
+    right: -25px;
+    top: 1px;
+    outline: none;
+    background-color: #242f7b;
+    border: none;
+    padding: 12px;
+    width: 100px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+  }
+}

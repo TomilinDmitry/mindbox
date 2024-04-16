@@ -1,0 +1,20 @@
+.list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  align-items: center;
+  .element {
+    color: rgb(88, 119, 255);
+
+    cursor: pointer;
+    font-family: "YS-D-Regular";
+    font-weight: 400;
+    font-size: 24px;
+  }
+  .active {
+    @extend .element;
+    color: black;
+    font-weight: 400;
+    font-size: 24px;
+  }
+}
